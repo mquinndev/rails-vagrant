@@ -1,0 +1,8 @@
+# railsVagrant
+Ubuntu 14.04 vagrant template for rails development.
+
+To use, do the following:
+* Run <tt>vagrant up</tt>
+* Run <tt>vagrant ssh</tt>
+* Cd to <tt>/vagrant/setup</tt>
+* Run <tt>./build.sh</tt>
