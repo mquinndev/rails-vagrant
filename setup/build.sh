@@ -10,5 +10,6 @@ rvm rubygems current
 sudo apt-get install git-core -y
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 cd /vagrant/setup
+wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.10.deb
 sudo dpkg -i elasticsearch-0.90.10.deb
-
+rm elasticsearch-0.90.10.deb
