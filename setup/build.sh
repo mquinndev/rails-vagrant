@@ -4,7 +4,7 @@ sudo apt-get install nodejs -y
 sudo apt-get install curl -y
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s stable --rails
-echo '[[ -s "/home/vagrant/.rvm/scripts/rvm" ]] && source "/home/vagrant/.rvm/scripts/rvm"' >> /home/vagrant/.bashrc
+echo "source $HOME/.rvm/scripts/rvm" >> /home/vagrant/.bashrc
 sudo apt-get install git-core -y
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 cd /vagrant/setup
