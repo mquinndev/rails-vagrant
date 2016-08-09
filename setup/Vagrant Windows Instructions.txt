@@ -6,5 +6,3 @@ For Windows:
 5. Open CMD and navigate to railsVagrant folder
 6. From CMD run vagrant up
 7. Run vagrant ssh
-8. Run build.sh inside vagrant
-
