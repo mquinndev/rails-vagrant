@@ -5,10 +5,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "setup/build.sh"
   config.vm.provision :shell, path: "setup/rvm-install.sh", args: "stable", privileged: false
   config.vm.provision :shell, path: "setup/ruby-install.sh", args: "2.3.0 rails", privileged: false
+  config.vm.provision :shell, path: "setup/nvm-install.sh", privileged: false
   config.vm.provision :shell, path: "setup/other-user-setup.sh", privileged: false
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2
-    v.name = "railsdev"
+    v.name = "developer"
   end
 end
