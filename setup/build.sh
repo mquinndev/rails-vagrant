@@ -1,16 +1,31 @@
 #!/usr/bin/env bash
-apt-get update
-apt-get install software-properties-common python-software-properties curl git -y
+
+# Docker versions
+COMPOSE_VERSION='1.15.0'
+DOCKER_VERSION='17.06.2'
+
 add-apt-repository ppa:ondrej/php -y
-apt-get update
-apt-get install php7.1 php7.1-common -y
-apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring -y
-apt-get install apache2-utils -y
+apt-get update -qq
+apt-get install -y -qq \
+	software-properties-common \
+	python-software-properties \
+	curl \
+	git \
+	php7.1 \
+	php7.1-common
+	php7.1-curl \
+	php7.1-xml \
+	php7.1-zip \
+	php7.1-gd \
+	php7.1-mysql \
+	php7.1-mbstring 
+	apache2-utils 
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-#Docker install
-curl -sSL https://get.docker.com/ | sh
-usermod -aG docker vagrant
-curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > docker-compose
-mv docker-compose /usr/local/bin/
+# Install docker and compose
+apt-get update
+apt-get install -y -qq docker-ce=${DOCKER_VERSION}~ce-0~ubuntu
+curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m) > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
+# Add ubuntu to docker group
+usermod -a -G docker vagrant
