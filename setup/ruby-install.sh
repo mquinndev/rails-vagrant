@@ -8,6 +8,7 @@
 
  if (( $# ))
  then gem install $@
+      gem install rspec
  fi
 
  rvm cleanup all
