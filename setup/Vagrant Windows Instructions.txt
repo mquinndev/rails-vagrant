@@ -1,8 +1,0 @@
-For Windows:
-1. Install GIT
-2. Open CMD and run: setx PATH=%PATH%;C:\Program Files (x86)\Git\bin
-3. Install Virtualbox
-4. Instal Vagrant
-5. Open CMD and navigate to railsVagrant folder
-6. From CMD run vagrant up
-7. Run vagrant ssh
