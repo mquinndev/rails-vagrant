@@ -3,7 +3,7 @@
 main() {
 
 source_rvm
-rvm use __default __install $1
+rvm use --default --install $1
 
 shift
 

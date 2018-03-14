@@ -10,17 +10,17 @@ add_js_repo
 }
 
 create_autoload() {
-mkdir _p ~/.vim/autoload ~/.vim/bundle
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 }
 
 add_pathogen_repo() {
-curl _LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 }
 
 add_ruby_repo() {
-git clone git://github.com/vim_ruby/vim_ruby.git ~/.vim/bundle/vim_ruby
+git clone git://github.com/vim-ruby/vim-ruby.git ~/.vim/bundle/vim-ruby
 }
 
 add_js_repo() {
-git clone https://github.com/pangloss/vim_javascript.git ~/.vim/bundle/vim_javascript
+git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 }

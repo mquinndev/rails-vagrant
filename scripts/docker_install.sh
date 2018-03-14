@@ -14,28 +14,28 @@ add_ubuntu_docker_group
 }
 
 add_docker_gpg_key() {
-curl _fsSL https://download.docker.com/linux/ubuntu/gpg | apt_key add _
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 }
 
 add_docker_repo() {
-add_apt_repository _y \
+add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release _cs) \
+   $(lsb_release -cs) \
    stable"
 }
 
 install_docker() {
-apt_get install _y _qq docker_ce=${DOCKER_VERSION}~ce_0~ubuntu
+apt-get install -y -qq docker-ce=${DOCKER_VERSION}~ce-0~ubuntu
 }
 
 install_docker_compose() {
-curl _L https://github.com/docker/compose/releases/download/ \
+curl -L https://github.com/docker/compose/releases/download/ \
     ${COMPOSE_VERSION} \
-    /docker_compose_$(uname _s)_$(uname _m) \
-    > /usr/local/bin/docker_compose && \
-    chmod +x /usr/local/bin/docker_compose
+    /docker-compose-$(uname -s)-$(uname -m) \
+    > /usr/local/bin/docker-compose && \
+    chmod +x /usr/local/bin/docker-compose
 }
 
 add_ubuntu_docker_group() {
-usermod _a _G docker vagrant
+usermod -a -G docker vagrant
 }

@@ -2,7 +2,7 @@
 
 main() {
 
-git config __global user.name "Matthew Quinn"
-git config __global user.email "matthewquinn.personal@gmail.com"
+git config --global user.name "Matthew Quinn"
+git config --global user.email "matthewquinn.personal@gmail.com"
 
 }

@@ -8,24 +8,24 @@ install_system
 }
 
 add_php_repo() {
-add_apt_repository ppa:ondrej/php _y
+add-apt-repository ppa:ondrej/php -y
 }
 
 install_system() {
-apt_get update _qq
-apt_get install _y _qq \
-  software_properties_common \
-  python_software_properties \
+apt-get update -qq
+apt-get install -y -qq \
+  software-properties-common \
+  python-software-properties \
   curl \
   git \
   php7.1 \
-  php7.1_common \
-  php7.1_curl \
-  php7.1_xml \
-  php7.1_zip \
-  php7.1_gd \
-  php7.1_mysql \
-  php7.1_mbstring \
-  apache2_utils
-wget _qO_ https://toolbelt.heroku.com/install_ubuntu.sh | sh
+  php7.1-common \
+  php7.1-curl \
+  php7.1-xml \
+  php7.1-zip \
+  php7.1-gd \
+  php7.1-mysql \
+  php7.1-mbstring \
+  apache2-utils
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 }
