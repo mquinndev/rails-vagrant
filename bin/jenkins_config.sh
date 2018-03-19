@@ -2,7 +2,9 @@
 
 main() {
 
-pull_latest_jenkins_docker
+if [[ "$(docker images -q)" == "" ]]; then
+  pull_latest_jenkins_docker
+fi
 run_jenkins
 
 }
@@ -12,5 +14,5 @@ docker pull jenkins
 }
 
 run_jenkins() {
-docker run -i -d -p 8080:8080 --name=jenkins_master jenkins
+docker run -i -d -p 8080:8080 jenkins
 }

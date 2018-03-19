@@ -12,6 +12,7 @@ if (( $# ))
 fi
 
 rspec_install
+bundle install
 }
 
 source_rvm() {
