@@ -10,7 +10,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "bin/nvm_install.sh", privileged: false
   config.vm.provision :shell, path: "bin/vim_install.sh", privileged: false
   config.vm.provision :shell, path: "bin/git_config.sh", privileged: false
-  config.vm.provision :shell, path: "bin/jenkins_config.sh", privileged: false
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2
