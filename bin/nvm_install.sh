@@ -9,11 +9,11 @@ install_node
 }
 
 add_nvm_repo() {
-curl -o- https://raw.githubusercontent.com/creationix/nvm/ \
-   v0.33.0/install.sh \
-   | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 }
 
 install_node() {
 nvm install node
 }
+
+main

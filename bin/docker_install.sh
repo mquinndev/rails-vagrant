@@ -7,8 +7,10 @@ main() {
 
 add_docker_gpg_key
 add_docker_repo
+apt-get update
 install_docker
 install_docker_compose
+chmod +x /usr/local/bin/docker-compose
 add_ubuntu_docker_group
 
 }
@@ -29,13 +31,12 @@ apt-get install -y -qq docker-ce=${DOCKER_VERSION}~ce-0~ubuntu
 }
 
 install_docker_compose() {
-curl -L https://github.com/docker/compose/releases/download/ \
-    ${COMPOSE_VERSION} \
-    /docker-compose-$(uname -s)-$(uname -m) \
-    > /usr/local/bin/docker-compose && \
-    chmod +x /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m) \
+   > /usr/local/bin/docker-compose
 }
 
 add_ubuntu_docker_group() {
-usermod -a -G docker vagrant
+usermod -aG docker vagrant
 }
+
+main

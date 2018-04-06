@@ -2,27 +2,24 @@
 
 main() {
 
-source_rvm
-rvm use --default --install $1
-
-shift
-
-if (( $# ))
-  then gem install $@
-fi
-
-rspec_install
-bundle install
-}
-
-source_rvm() {
 source $HOME/.rvm/scripts/rvm
+install_ruby
+install_rails
+install_rspec
+bundle install --gemfile /vagrant/Gemfile
+
 }
 
-rvm_cleanup() {
-rvm cleanup all
+install_ruby() {
+rvm use --default --install 2.4.0
 }
 
-rspec_install() {
+install_rails() {
+gem install rails
+}
+
+install_rspec() {
 gem install rspec
 }
+
+main

@@ -29,3 +29,5 @@ apt-get install -y -qq \
   apache2-utils
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 }
+
+main

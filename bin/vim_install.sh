@@ -24,3 +24,5 @@ git clone git://github.com/vim-ruby/vim-ruby.git ~/.vim/bundle/vim-ruby
 add_js_repo() {
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
 }
+
+main
